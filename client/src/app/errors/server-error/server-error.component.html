@@ -1,0 +1,17 @@
+<h4>Internal Server Error - refreshing the page will make error gone.</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weight-bold">If you are seeing this, is probably isn't an Agular issue.</p>
+    <p>What to do next?</p>
+    <ol>
+        <li>Open the Chrome dev tools</li>
+        <li>Inspect the network tab</li>
+        <li>Check the failing request in red</li>
+        <li>Examine the request URL - make sure it is correct</li>
+        <li>Reproduce the error in Postman - If postman has the issue, then server API issue</li>
+    </ol>
+    <p>Following is the stack trace - you should start here</p>
+    <code class="mt-5" style="background-color: whitesmoke;">
+        {{error.details}}
+    </code>
+</ng-container>
