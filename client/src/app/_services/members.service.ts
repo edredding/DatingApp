@@ -1,10 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
-=======
->>>>>>> a4e7b21418412cfd9ee9cd1ab095c5a5c891240c
 import { environment } from 'src/environments/environment';
 import { Member } from '../_models/members';
 
@@ -13,15 +10,11 @@ import { Member } from '../_models/members';
 })
 export class MembersService {
   baseUrl = environment.apiUrl;
-<<<<<<< HEAD
   members: Member[] = [];
-=======
->>>>>>> a4e7b21418412cfd9ee9cd1ab095c5a5c891240c
 
   constructor(private http: HttpClient) { }
 
   getMembers() {
-<<<<<<< HEAD
     if (this.members.length > 0) return of(this.members);
     return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
       map(members => {
@@ -45,12 +38,12 @@ export class MembersService {
       })
     );
   }
-=======
-    return this.http.get<Member[]>(this.baseUrl + 'users');
+
+  setMainPhoto(photoId: number) {
+    return this.http.put(this.baseUrl + 'users/set-main-photo/' + photoId, {});
   }
 
-  getMember(username: string) {
-    return this.http.get<Member>(this.baseUrl + 'users/' + username);
+  deletePhoto(photoId: number) {
+    return this.http.delete(this.baseUrl + 'users/delete-photo/' + photoId);
   }
->>>>>>> a4e7b21418412cfd9ee9cd1ab095c5a5c891240c
 }

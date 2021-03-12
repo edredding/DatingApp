@@ -20,12 +20,10 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
-<<<<<<< HEAD
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
-=======
->>>>>>> a4e7b21418412cfd9ee9cd1ab095c5a5c891240c
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +38,9 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-<<<<<<< HEAD
     MemberCardComponent,
-    MemberEditComponent
-=======
-    MemberCardComponent
->>>>>>> a4e7b21418412cfd9ee9cd1ab095c5a5c891240c
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -58,12 +53,8 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-<<<<<<< HEAD
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
-=======
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
->>>>>>> a4e7b21418412cfd9ee9cd1ab095c5a5c891240c
   ],
   bootstrap: [AppComponent]
 })
