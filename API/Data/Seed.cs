@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Collections.Generic;
 using API.Entities;
 using Microsoft.AspNetCore.Identity;
+using System.Linq;
 
 namespace API.Data
 {
@@ -32,6 +33,7 @@ namespace API.Data
 
             foreach (var user in users)
             {
+                user.Photos.First().IsApproved = true;
                 user.UserName = user.UserName.ToLower();
                 await userManager.CreateAsync(user, "Q1w2e3r4");
                 await userManager.AddToRoleAsync(user, "Member");
